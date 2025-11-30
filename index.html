@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Skyra - Weather at a Glance</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/x-icon" href="assets/skyra.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<canvas id="weatherCanvas"></canvas>
+<div class="container" id="app">
+
+<!-- Search + Buttons -->
+<div class="search-box">
+<input id="cityInput" type="search" placeholder="Enter city (e.g. London)">
+<button id="searchBtn" class="search-btn">Search</button>
+<button id="saveFav" class="save-btn">❤️</button>
+<button id="voiceBtn" class="voice-btn">🎤</button>
+<button id="themeToggle" class="theme-btn" aria-pressed="false">🌙</button>
+<button id="locBtn" class="loc-btn">📍</button>
+</div>
+
+<div class="grid">
+<div class="widget weather-main" id="weatherDisplay">
+<p class="small">Search for a city to display weather</p>
+<div class="alert-badge" id="alertBadge">⚠ Weather Alert</div>
+</div>
+
+<div class="widget">
+<h3 style="text-align: center;">5-Day Forecast</h3>
+<div id="forecastContainer"></div>
+</div>
+
+<div class="widget">
+<h3 style="text-align: center;">Map</h3>
+<div id="map"></div>
+</div>
+
+<div class="widget">
+<h3 style="text-align: center;">Temperature Trend</h3>
+<canvas id="tempChart"></canvas>
+</div>
+
+<div class="widget fav-panel">
+<h3 style="text-align: center;">Favorite Cities</h3>
+<div id="favCities"></div>
+</div>
+
+<div class="widget sun-panel">
+    <h3 style="text-align: center;">Sunrise & Sunset</h3>
+
+   <div class="sun-times">
+    <div class="sun-item" id="sunriseBox">Sunrise: --</div>
+    <div class="sun-item" id="sunsetBox">Sunset: --</div>
+</div>
+
+</div>
+
+
+
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js">
+
+</script>
+</body>
+</html>
